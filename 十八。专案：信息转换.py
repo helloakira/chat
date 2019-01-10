@@ -12,6 +12,7 @@ def read_file(filename):
 # 转换
 def convert(lines):
     chat = []
+    person = None
     for line in lines:
         if line == 'Allen':
             person = 'Allen'
@@ -19,7 +20,8 @@ def convert(lines):
         elif line == 'Tom':
             person = 'Tom'
             continue
-        chat.append(person + ' : ' + line + '\n')
+        if person:
+            chat.append(person + ' : ' + line + '\n')
     return chat
 
 
